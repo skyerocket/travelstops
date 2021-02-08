@@ -64,19 +64,19 @@ Test Cases:
     ✓ Is a cancelled Trip
     ✓ It costs 0
 
-  Taps ON Bus1 and Taps OFF Bus2 (at different stop)
+  Taps ON Bus1 and somehow Taps OFF Bus2 (at different stop)
     ✓ Is a completed Trip
     ✓ It costs 7.3
 
-  Taps ON Bus1 and Taps OFF Bus2 (at the same stop)
+  Taps ON Bus1 and somehow Taps OFF Bus2 (at the same stop)
     ✓ Is a cancelled Trip
     ✓ It costs 0
 
-  Taps ON Bus1 and no Taps OFF
+  Taps ON and no Taps OFF
     ✓ Is a unfinished Trip
     ✓ It costs 7.3
 
-  Taps ON Bus1 and somehow Taps ON Bus2
+  Taps ON and somehow Taps ON again
     ✓ There is a unfinished Trip
     ✓ It costs 7.3
 
