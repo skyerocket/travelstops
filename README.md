@@ -45,6 +45,7 @@ started,finished,durationSecs,fromStop,toStop,chargeAmount,companyId,busId,PAN,s
 
 Test Cases:
 
+```shell
   Taps ON Stop1 and Taps OFF Stop 2
     ✓ Is a complete Trip
     ✓ It costs 3.25
@@ -81,5 +82,6 @@ Test Cases:
 
 
   18 passing (6ms)
+  ```
 
 
