@@ -321,7 +321,7 @@ describe('Taps ON Bus1 and no Taps OFF', () => {
   })    
 })
 
-describe('Taps ON Bus1 and somehow Taps ON Bus2', () => {
+describe('Taps ON and somehow Taps ON again', () => {
 	const input = [
 					  {
 					    ID: '1',
@@ -338,7 +338,7 @@ describe('Taps ON Bus1 and somehow Taps ON Bus2', () => {
 					    TapType: 'ON',
 					    StopId: 'Stop1',
 					    CompanyId: 'Company1',
-					    BusID: 'Bus38',
+					    BusID: 'Bus37',
 					    PAN: '34343434343434'
 					  }
 				    ]

@@ -3,8 +3,9 @@
   1. The primary key of each tap record is PAN number
   2. The companyId is irrelavant
   3. The first record must be of type ON
-  4. Tapping OFF at different busID (tap ON on bus1 and tap OFF on bus2) 
+  4. Tapping OFF at different busID (tap ON on bus1 and tap OFF on bus2)  
   is taken as a COMPLETED trip instead of a UNFINISHED trip and charges MAX.
+  // although it seems Bus should only be able to tapped ON before it can be tapped OFF. Just in case...
 
   Process:
   1. group tap records by PAN.
