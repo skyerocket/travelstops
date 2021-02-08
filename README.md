@@ -1,7 +1,8 @@
 # Travel Stops
 
-## To Run
 `npm install`
+
+## To Run
 
 `node index.js`
 
