@@ -1,6 +1,7 @@
 started,finished,durationSecs,fromStop,toStop,chargeAmount,companyId,busId,PAN,status
 22-01-2018 13:00:00,22-01-2018 13:05:00,300,Stop1,Stop2,3.25,Company1,Bus37,34343434343434,completed
 24-01-2018 13:00:00,24-01-2018 13:05:00,300,Stop2,Stop3,7.3,Company2,Bus37,34343434343434,completed
+24-01-2018 13:00:00,24-01-2018 13:05:00,300,Stop1,Stop3,7.3,Company2,Bus37,34343434343434,completed
 23-01-2018 13:00:00,23-01-2018 13:05:00,300,Stop2,Stop3,5.5,Company2,Bus37,4444333322221111,completed
 25-01-2018 13:00:00,,,Stop1,,7.3,Company1,Bus37,3528000700000000,unfinished
 26-01-2018 13:05:00,,,Stop1,,7.3,Company1,Bus37,3528000700000000,unfinished

@@ -4,6 +4,8 @@
 
 ## To Run
 
-`node index.js`
+`npm run start`
 
 ## To Test
+
+`npm run test`
