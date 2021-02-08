@@ -2,8 +2,8 @@
   The assumption:
   1. The primary key of each tap record is PAN number
   2. The companyId is irrelavant
-  3. The first record must be of type ON, no left over records from yesterday
-  4. The next record of a ON record must be OFF
+  3. The first record must be of type ON
+  4. The next record of a ON record must be OFF or else it is another Trip.
   e.g. tapping ON on bus1 and taopping ON on bus2 will not result in 2 ON record
   instead ON at bus1 and OFF at bus2
 
@@ -23,15 +23,7 @@
 	  	Finish one trip record and find another ON record.
 	  3.2.1 Has another ON record, repeat the process starting from 2
 	  3.2.2 No record, move to another PAN's records
-
-
-  Scenarios:
-  1. Person ON BUS1, and OFF BUS1, with ON before OFF => Completed trip, calculateFee(ONSTOP, OFFSTOP)
-  2. Person ON BUS1, and OFF BUS1, with ON after OFF => 
-
-
 */
-
 
 const csvFilePath='./taps.csv'
 const csv=require('csvtojson')
@@ -51,23 +43,51 @@ const MAX = 7.3
 const price = {STOP1AND2, STOP2AND3, STOP1AND3, MAX}
 
 class Trip {
-	constructor() {
-		this.started = ""
-		this.finished = ""
-		this.durationSecs = 0
-		this.fromStop = ""
-		this.toStop = ""
-		this.chargeAmount = ""
-		this.companyId = ""
-		this.busId = ""
-		this.PAN = 0
-		this.status = ""
+	constructor(
+		started = "", 
+		finished = "",
+		durationSecs = 0,
+		fromStop = "",
+		toStop = "",
+		chargeAmount = "",
+		companyId = "",
+		busId = "",
+		PAN = 0,
+		status = "") {
+		this.started = started
+		this.finished = finished
+		this.durationSecs = durationSecs
+		this.fromStop = fromStop
+		this.toStop = toStop
+		this.chargeAmount = chargeAmount
+		this.companyId = companyId
+		this.busId = busId
+		this.PAN = PAN
+		this.status = status
  	}
 }
 
+// const calculateTrip = 
+
 const processData = json => {
-	_.
-	return json
+	const trips = []
+	const grouped = _.groupBy(json, 'PAN')
+	for (let pan in grouped){
+		const panRecords = grouped[pan]
+		const startTap = panRecords[0]
+		const trip = new Trip(startTap.DateTimeUTC, 
+			null, 
+			null, 
+			startTap.StopId, 
+			null, 
+			null, 
+			startTap.companyId, 
+			startTap.busId, 
+			startTap.PAN,
+			null)
+		trips.push(JSON.parse(JSON.stringify(trip)))
+	}
+	return trips
 }
 
 csv()
