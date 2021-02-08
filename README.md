@@ -76,7 +76,7 @@ Test Cases:
     ✓ Is a unfinished Trip
     ✓ It costs 7.3
 
-  Taps ON Bus1 and somehow Taps ON Bus2
+  Taps ON and somehow Taps ON again
     ✓ There is a unfinished Trip
     ✓ It costs 7.3
 
