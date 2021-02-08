@@ -101,7 +101,9 @@ const fillTripByStatus = (trip, startTap = null, record = null, status) => {
 }
 
 const generateTripsFromRecords = (records, trips) => {
-	if (records.length == 0) return trips
+	if (records.length == 0) {
+		return trips
+	}
 	const startTap = records[0]
 	const trip = new Trip(startTap.DateTimeUTC, 
 		null, 
@@ -127,7 +129,8 @@ const generateTripsFromRecords = (records, trips) => {
 		const filledTrip = fillTripByStatus(trip, null, null, STATUS.UNFINISHED)
 		trips.push(filledTrip)
 	}
-	generateTripsFromRecords(records.splice(2, records.length - 1), trips)
+	generateTripsFromRecords(records.splice(2, records.length), trips)
+	return trips
 }
 
 const processData = json => {
@@ -136,10 +139,9 @@ const processData = json => {
 	for (let pan in grouped){
 		const records = grouped[pan]
 		const generatedTrips = generateTripsFromRecords(records, [])
-		// console.log(generatedTrips)
-		// trips.push(...generatedTrips)
+		trips.push(...generatedTrips)
 	}
-	return json
+	return trips
 }
 
 csv()
